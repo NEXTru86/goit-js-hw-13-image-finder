@@ -2161,77 +2161,77 @@ var templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<div class=\"photo-card\">\r\n    <img src=\"" + alias4((helper = (helper = lookupProperty(helpers, "webformatURL") || (depth0 != null ? lookupProperty(depth0, "webformatURL") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
+    return "<div class=\"photo-card\">\r\n    <div class=\"container-image\">\r\n        <img src=\"" + alias4((helper = (helper = lookupProperty(helpers, "webformatURL") || (depth0 != null ? lookupProperty(depth0, "webformatURL") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
       "name": "webformatURL",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 14
+          "line": 4,
+          "column": 18
         },
         "end": {
-          "line": 3,
-          "column": 30
+          "line": 4,
+          "column": 34
         }
       }
-    }) : helper)) + "\" alt=\"\" width=\"640\" />\r\n\r\n    <div class=\"stats\">\r\n        <p class=\"stats-item\">\r\n            <i class=\"material-icons\">thumb_up</i>\r\n            " + alias4((helper = (helper = lookupProperty(helpers, "likes") || (depth0 != null ? lookupProperty(depth0, "likes") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\" alt=\"\" />\r\n\r\n        <div class=\"stats\">\r\n            <p class=\"stats-item\">\r\n                <i class=\"material-icons\">thumb_up</i>\r\n                " + alias4((helper = (helper = lookupProperty(helpers, "likes") || (depth0 != null ? lookupProperty(depth0, "likes") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
       "name": "likes",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 12
+          "line": 9,
+          "column": 16
         },
         "end": {
-          "line": 8,
-          "column": 21
+          "line": 9,
+          "column": 25
         }
       }
-    }) : helper)) + "\r\n        </p>\r\n        <p class=\"stats-item\">\r\n            <i class=\"material-icons\">visibility</i>\r\n            " + alias4((helper = (helper = lookupProperty(helpers, "views") || (depth0 != null ? lookupProperty(depth0, "views") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\r\n            </p>\r\n            <p class=\"stats-item\">\r\n                <i class=\"material-icons\">visibility</i>\r\n                " + alias4((helper = (helper = lookupProperty(helpers, "views") || (depth0 != null ? lookupProperty(depth0, "views") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
       "name": "views",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 12
+          "line": 13,
+          "column": 16
         },
         "end": {
-          "line": 12,
-          "column": 21
+          "line": 13,
+          "column": 25
         }
       }
-    }) : helper)) + "\r\n        </p>\r\n        <p class=\"stats-item\">\r\n            <i class=\"material-icons\">comment</i>\r\n            " + alias4((helper = (helper = lookupProperty(helpers, "comments") || (depth0 != null ? lookupProperty(depth0, "comments") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\r\n            </p>\r\n            <p class=\"stats-item\">\r\n                <i class=\"material-icons\">comment</i>\r\n                " + alias4((helper = (helper = lookupProperty(helpers, "comments") || (depth0 != null ? lookupProperty(depth0, "comments") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
       "name": "comments",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 16,
-          "column": 12
+          "line": 17,
+          "column": 16
         },
         "end": {
-          "line": 16,
-          "column": 24
+          "line": 17,
+          "column": 28
         }
       }
-    }) : helper)) + "\r\n        </p>\r\n        <p class=\"stats-item\">\r\n            <i class=\"material-icons\">cloud_download</i>\r\n            " + alias4((helper = (helper = lookupProperty(helpers, "downloads") || (depth0 != null ? lookupProperty(depth0, "downloads") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
+    }) : helper)) + "\r\n            </p>\r\n            <p class=\"stats-item\">\r\n                <i class=\"material-icons\">cloud_download</i>\r\n                " + alias4((helper = (helper = lookupProperty(helpers, "downloads") || (depth0 != null ? lookupProperty(depth0, "downloads") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
       "name": "downloads",
       "hash": {},
       "data": data,
       "loc": {
         "start": {
-          "line": 20,
-          "column": 12
+          "line": 21,
+          "column": 16
         },
         "end": {
-          "line": 20,
-          "column": 25
+          "line": 21,
+          "column": 29
         }
       }
-    }) : helper)) + "\r\n        </p>\r\n    </div>\r\n</div>\r\n";
+    }) : helper)) + "\r\n            </p>\r\n        </div>\r\n    </div>\r\n\r\n\r\n</div>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function main(container, depth0, helpers, partials, data) {
@@ -2256,7 +2256,7 @@ var templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 28,
           "column": 9
         }
       }
@@ -2757,9 +2757,10 @@ var debounce = require('lodash.debounce');
 
 var refs = {
   listGallery: document.querySelector('.gallery'),
-  inputQuery: document.querySelector('#search-form')
+  inputQuery: document.querySelector('#search-form'),
+  btnLoadMore: document.querySelector('.get-more-btn')
 };
-refs.inputQuery.addEventListener('input', debounce(onSearch, 1000));
+refs.inputQuery.addEventListener('input', debounce(onSearch, 1000)); // refs.btnLoadMore.addEventListener('click', );
 
 function onSearch(evt) {
   if (evt.target.value !== '') {
@@ -2807,7 +2808,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61440" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65184" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
