@@ -1,2 +1,2 @@
-# goit-js-hw-13-image-finder
-Домашняя работа № 13
+# goit-js-hw-12-countries
+Домашняя работа № 12 (Fetch API)

@@ -1,0 +1,37 @@
+{
+  "name": "goit-js-hw-13-image-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://NEXTru86.github.io/goit-js-hw-13-image-finder",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html",
+    "predeploy": "npm run build -- --public-url /goit-js-hw-13-image-finder/",
+    "deploy": "gh-pages -d dist",
+    "server": "json-server --watch src/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEXTru86/goit-js-hw-13-image-finder.git"
+  },
+  "keywords": [],
+  "author": "Pavel Kharin <kharinpav@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NEXTru86/goit-js-hw-13-image-finder/issues"
+  },
+  "devDependencies": {
+    "@pnotify/core": "^5.2.0",
+    "gh-pages": "^3.1.0",
+    "json-server": "^0.16.3",
+    "parcel-bundler": "^1.11.0",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "posthtml-include": "^1.6.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "@pnotify/mobile": "^5.2.0",
+    "lodash.debounce": "^4.0.8"
+  }
+}
