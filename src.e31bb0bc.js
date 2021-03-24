@@ -2762,23 +2762,19 @@ var refs = {
 refs.inputQuery.addEventListener('input', debounce(onSearch, 1000));
 
 function onSearch(evt) {
-  console.log(evt.target.value);
-
   if (evt.target.value !== '') {
     _apiService.default.fetchImages(evt.target.value).then(createGallery).catch(function (error) {
       return console.log(error);
     });
-  } // else {
-  //     createGallery('');
-  // };
+  }
 
+  ;
 }
 
 ;
 
 function createGallery(images) {
-  console.log(images);
-  var listMarkup = (0, _templateCard.default)(images);
+  var listMarkup = (0, _templateCard.default)(images.hits);
   refs.listGallery.innerHTML = listMarkup;
 }
 
@@ -2811,7 +2807,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61440" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
