@@ -2290,6 +2290,107 @@ var _default = {
   fetchImages: fetchImages
 };
 exports.default = _default;
+},{}],"get-gallery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var BASE_URL = 'http://localhost:3000';
+
+function fetchGallery() {
+  var url = "".concat(BASE_URL, "/images");
+  return fetch(url).then(function (res) {
+    return res.json();
+  });
+}
+
+;
+var _default = {
+  fetchGallery: fetchGallery
+};
+exports.default = _default;
+},{}],"post-gallery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var BASE_URL = 'http://localhost:3000';
+
+function addGallery(gallery) {
+  var url = "".concat(BASE_URL, "/images");
+  var options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(gallery)
+  };
+  return fetch(url, options).then(function (res) {
+    return res.json();
+  });
+}
+
+;
+var _default = {
+  addGallery: addGallery
+};
+exports.default = _default;
+},{}],"put-gallery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var BASE_URL = 'http://localhost:3000';
+
+function updateGallery(gallery) {
+  var url = "".concat(BASE_URL, "/images");
+  var options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(gallery)
+  };
+  return fetch(url, options).then(function (res) {
+    return res.json();
+  });
+}
+
+;
+var _default = {
+  updateGallery: updateGallery
+};
+exports.default = _default;
+},{}],"delete-gallery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var BASE_URL = 'http://localhost:3000';
+
+function deleteGallery(id) {
+  var url = "".concat(BASE_URL, "/images/").concat(id);
+  var options = {
+    method: 'DELETE'
+  };
+  return fetch(url, options).then(function (res) {
+    return res.json();
+  });
+}
+
+;
+var _default = {
+  deleteGallery: deleteGallery
+};
+exports.default = _default;
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -2749,6 +2850,14 @@ var _templateCard = _interopRequireDefault(require("./templates/template-card.hb
 
 var _apiService = _interopRequireDefault(require("./apiService"));
 
+var _getGallery = _interopRequireDefault(require("./get-gallery"));
+
+var _postGallery = _interopRequireDefault(require("./post-gallery"));
+
+var _putGallery = _interopRequireDefault(require("./put-gallery"));
+
+var _deleteGallery = _interopRequireDefault(require("./delete-gallery"));
+
 require("./styles.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -2764,7 +2873,7 @@ refs.inputQuery.addEventListener('input', debounce(onSearch, 1000)); // refs.btn
 
 function onSearch(evt) {
   if (evt.target.value !== '') {
-    _apiService.default.fetchImages(evt.target.value).then(createGallery).catch(function (error) {
+    _apiService.default.fetchImages(evt.target.value).then(_postGallery.default.addGallery).then(_getGallery.default.fetchGallery()).then(createGallery).catch(function (error) {
       return console.log(error);
     });
   }
@@ -2780,7 +2889,7 @@ function createGallery(images) {
 }
 
 ;
-},{"./templates/template-card.hbs":"templates/template-card.hbs","./apiService":"apiService.js","./styles.css":"styles.css","lodash.debounce":"../node_modules/lodash.debounce/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./templates/template-card.hbs":"templates/template-card.hbs","./apiService":"apiService.js","./get-gallery":"get-gallery.js","./post-gallery":"post-gallery.js","./put-gallery":"put-gallery.js","./delete-gallery":"delete-gallery.js","./styles.css":"styles.css","lodash.debounce":"../node_modules/lodash.debounce/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2808,7 +2917,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49414" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63955" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
