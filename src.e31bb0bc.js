@@ -2864,18 +2864,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var debounce = require('lodash.debounce');
 
-var refs = {
+const refs = {
   listGallery: document.querySelector('.gallery'),
   inputQuery: document.querySelector('#search-form'),
   btnLoadMore: document.querySelector('.get-more-btn')
 };
 refs.inputQuery.addEventListener('input', debounce(onSearch, 1000)); // refs.btnLoadMore.addEventListener('click', );
 
-function onSearch(evt) {
+async function onSearch(evt) {
   if (evt.target.value !== '') {
-    _apiService.default.fetchImages(evt.target.value).then(_postGallery.default.addGallery).then(_getGallery.default.fetchGallery()).then(createGallery).catch(function (error) {
-      return console.log(error);
-    });
+    const imagesArr = await _apiService.default.fetchImages(evt.target.value);
+    await _postGallery.default.addGallery(imagesArr);
+    const imagesArrFromMyBackend = await _getGallery.default.fetchGallery();
+    await createGallery(imagesArrFromMyBackend); // .then(post.addGallery)
+    // .then(get.fetchGallery())
+    // .then(createGallery)
+    // .catch(error => console.log(error));
   }
 
   ;
@@ -2884,7 +2888,7 @@ function onSearch(evt) {
 ;
 
 function createGallery(images) {
-  var listMarkup = (0, _templateCard.default)(images.hits);
+  const listMarkup = (0, _templateCard.default)(images.hits);
   refs.listGallery.innerHTML = listMarkup;
 }
 
@@ -2917,7 +2921,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63955" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64358" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
