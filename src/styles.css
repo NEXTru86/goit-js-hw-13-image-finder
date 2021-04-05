@@ -1,3 +1,17 @@
+@import '../node_modules/basiclightbox/src/styles/main.scss';
+.basicLightbox__background {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.basicLightbox__zIndex {
+  z-index: 1000;
+}
+.basicLightbox__duration {
+  transition-duration: 00.4s;
+}
+.basicLightbox__timing {
+  transition-timing-function: ease;
+}
+
 :root {
   --main-font: 'Roboto', sans-serif;
 }
@@ -82,46 +96,10 @@ img {
   display: flex;
   padding: 10px 10px;
   text-align: center;
+  justify-content: space-between;
 }
 
-/* .name {
-  text-align: center;
-}
-
-.js-search {
-  margin-top: 25px;
-  margin-bottom: 15px;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.167;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
-.js-list {
-  margin-top: 5px;
-  margin-bottom: 5px;
-
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.167;
-  text-align: left;
-  letter-spacing: 0.03em;
-}
-
-.country-item {
-  margin-bottom: 15px;
-}
-
-.country-data {
+.stats-item {
   display: flex;
+  flex-direction: column;
 }
-
-.country-list-data {
-  margin-right: 30px;
-}
-
-.lang-item {
-  margin: 0 15px;
-} */
